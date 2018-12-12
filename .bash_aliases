@@ -1,0 +1,26 @@
+# aliases
+alias gst='git status'
+alias git-root='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
+
+function e() {
+  if test -z "$*" ; then
+      vim -c 'CommandT'
+  else
+      vim $*
+  fi
+}
+
+function vst () {
+  if test -z "$*" ; then
+      vim -c 'Gstatus' .vstatus
+  else
+      vim $*
+  fi
+}
+
+function dokku () {
+  ssh dokku $*
+}
+
+alias docker-clean='docker container prune --force'
+alias docker-clean-images='docker image prune --force --all'

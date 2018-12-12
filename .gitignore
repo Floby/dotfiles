@@ -1,0 +1,5 @@
+.*.sw[a-z]
+.*.un~
+.tern-port
+.vstatus
+*.orig

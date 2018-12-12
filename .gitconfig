@@ -1,0 +1,30 @@
+[user]
+    name = Florent Jaby
+    email = florent.jaby@gmail.com
+[color]
+    ui = auto
+[core]
+    whitespace = trailing-space,space-before-tab
+    excludesfile = /home/floby/.gitignore
+    editor = vim
+[diff]
+    renames = copies
+    mnemonicsprefix = true
+    tool = vimdiff
+[alias]
+  poule = pull
+  pullr = pull --rebase
+    co = checkout
+    st = status
+  lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+	pwn = push --no-verify
+[merge]
+    tool = vimdiff
+[push]
+    default = simple
+[branch]
+    autosetuprebase = always
+[rebase]
+  rerere = true
+[credential]
+    helper = cache --timeout=36000
