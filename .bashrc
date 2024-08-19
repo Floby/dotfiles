@@ -151,10 +151,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-export EDITOR=vim
-
-export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+which pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+eval "$(direnv hook bash)"
+
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.krew/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export EDITOR=vim
 setxkbmap -option "nbsp:none"
