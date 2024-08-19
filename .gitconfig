@@ -7,17 +7,18 @@
     whitespace = trailing-space,space-before-tab
     excludesfile = /home/floby/.gitignore
     editor = vim
+    quotePath = false
+    autocrlf = input
 [diff]
     renames = copies
     mnemonicsprefix = true
     tool = vimdiff
 [alias]
-  poule = pull
+  pushf = push --force-with-lease
   pullr = pull --rebase
-    co = checkout
-    st = status
-  lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-	pwn = push --no-verify
+  co = checkout
+  st = status
+  lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset) %C(bold yellow)%d%C(reset) %C(green)%GS%C(reset)' --abbrev-commit --date=relative
 [merge]
     tool = vimdiff
 [push]
@@ -28,3 +29,16 @@
   rerere = true
 [credential]
     helper = cache --timeout=36000
+[rerere]
+	enabled = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[init]
+	defaultBranch = main
+
+
+[includeIf "gitdir:~/dev/bm/"]
+  path = ~/dev/bm/.gitconfig
